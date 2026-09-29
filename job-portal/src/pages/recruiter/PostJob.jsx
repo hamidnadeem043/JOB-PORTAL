@@ -22,7 +22,6 @@ function PostJob() {
   function handleSubmit(e) {
     e.preventDefault()
     console.log('New job posted:', formData)
-    // Yahan baad me Python backend ko POST request bhejenge
     navigate('/recruiter/dashboard')
   }
 
@@ -61,7 +60,7 @@ function PostJob() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-gray-300 text-sm mb-1 block">Location</label>
               <input
