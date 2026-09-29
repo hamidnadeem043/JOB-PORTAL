@@ -19,10 +19,13 @@ function Navbar() {
   }
 
   return (
-    <nav className="bg-gray-800 px-6 py-4">
+    <nav className="bg-white/5 backdrop-blur-lg border-b border-white/10 px-6 py-4 sticky top-0 z-40">
       <div className="flex items-center justify-between">
-        <Link to="/" className="text-white text-xl font-bold" onClick={closeMenu}>
-          JobPortal
+        <Link to="/" className="text-xl font-extrabold flex items-center gap-1" onClick={closeMenu}>
+          <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+            Job
+          </span>
+          <span className="text-white">Portal</span>
         </Link>
 
         {/* Hamburger button — sirf mobile pe dikhega */}
@@ -43,7 +46,7 @@ function Navbar() {
           {role === 'guest' && (
             <>
               <Link to="/login" className="text-gray-300 hover:text-white">Login</Link>
-              <Link to="/register" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
+              <Link to="/register" className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white px-4 py-2 rounded-lg font-semibold transition-all">
                 Sign Up
               </Link>
             </>
@@ -98,7 +101,7 @@ function Navbar() {
               <Link
                 to="/register"
                 onClick={closeMenu}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-center"
+                className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white px-4 py-2 rounded-lg font-semibold text-center transition-all"
               >
                 Sign Up
               </Link>
