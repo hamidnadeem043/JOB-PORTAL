@@ -2,12 +2,13 @@ import { useState } from 'react'
 import dummyJobs from '../data/dummyJobs'
 import JobCard from '../components/JobCard'
 import { Search } from 'lucide-react'
+import { JOB_TYPES } from '../constants/jobTypes'
 
 function Jobs() {
   const [searchTerm, setSearchTerm] = useState('')
   const [typeFilter, setTypeFilter] = useState('All')
 
-  const types = ['All', 'Internship', 'Full-time', 'Part-time', 'Remote']
+  const types = ['All', ...JOB_TYPES]
 
   const filteredJobs = dummyJobs.filter((job) => {
     const matchesSearch =

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import dummyJobs from '../../data/dummyJobs'
+import { JOB_TYPES } from '../../constants/jobTypes'
 
 function EditJob() {
   const { id } = useParams()
@@ -91,10 +92,11 @@ function EditJob() {
                 onChange={handleChange}
                 className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
               >
-                <option value="Internship">Internship</option>
-                <option value="Full-time">Full-time</option>
-                <option value="Part-time">Part-time</option>
-                <option value="Remote">Remote</option>
+                {JOB_TYPES.map((type) => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
