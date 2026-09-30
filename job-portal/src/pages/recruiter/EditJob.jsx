@@ -19,7 +19,7 @@ function EditJob() {
 
   if (!existingJob) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0b0f1a' }}>
         <p className="text-white text-xl">Job not found.</p>
       </div>
     )
@@ -39,8 +39,8 @@ function EditJob() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 px-6 py-10">
-      <div className="max-w-2xl mx-auto bg-gray-800 rounded-2xl p-8">
+    <div className="min-h-screen px-6 py-10" style={{ backgroundColor: '#0b0f1a' }}>
+      <div className="max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
 
         <h1 className="text-3xl font-bold text-white mb-2">Edit Job</h1>
         <p className="text-gray-400 mb-6">Update the details of this job posting.</p>
@@ -54,7 +54,7 @@ function EditJob() {
               name="title"
               value={formData.title}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -66,7 +66,7 @@ function EditJob() {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -79,7 +79,7 @@ function EditJob() {
                 name="location"
                 value={formData.location}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -90,7 +90,7 @@ function EditJob() {
                 name="type"
                 value={formData.type}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {JOB_TYPES.map((type) => (
                   <option key={type} value={type}>
@@ -108,14 +108,14 @@ function EditJob() {
               value={formData.description}
               onChange={handleChange}
               rows={4}
-              className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
 
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold mt-2"
+            className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white py-2 rounded-lg font-semibold mt-2 transition-all"
           >
             Save Changes
           </button>

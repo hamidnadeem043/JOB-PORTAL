@@ -27,8 +27,8 @@ function PostJob() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 px-6 py-10">
-      <div className="max-w-2xl mx-auto bg-gray-800 rounded-2xl p-8">
+    <div className="min-h-screen px-6 py-10" style={{ backgroundColor: '#0b0f1a' }}>
+      <div className="max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
 
         <h1 className="text-3xl font-bold text-white mb-2">Post a New Job</h1>
         <p className="text-gray-400 mb-6">Fill in the details below to list a job or internship.</p>
@@ -43,7 +43,7 @@ function PostJob() {
               value={formData.title}
               onChange={handleChange}
               placeholder="e.g. Frontend Developer Intern"
-              className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -56,7 +56,7 @@ function PostJob() {
               value={formData.company}
               onChange={handleChange}
               placeholder="e.g. Decode Labs"
-              className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -70,7 +70,7 @@ function PostJob() {
                 value={formData.location}
                 onChange={handleChange}
                 placeholder="e.g. Lahore, Pakistan"
-                className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -81,7 +81,7 @@ function PostJob() {
                 name="type"
                 value={formData.type}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {JOB_TYPES.map((type) => (
                   <option key={type} value={type}>
@@ -100,14 +100,14 @@ function PostJob() {
               onChange={handleChange}
               rows={4}
               placeholder="Describe the role, responsibilities, and requirements..."
-              className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
 
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold mt-2"
+            className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white py-2 rounded-lg font-semibold mt-2 transition-all"
           >
             Post Job
           </button>

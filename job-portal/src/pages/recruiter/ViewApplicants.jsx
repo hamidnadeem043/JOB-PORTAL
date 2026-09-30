@@ -10,7 +10,7 @@ function ViewApplicants() {
   const applicants = dummyApplicants.filter((a) => a.jobId === Number(jobId))
 
   return (
-    <div className="min-h-screen bg-gray-900 px-6 py-10">
+    <div className="min-h-screen px-6 py-10" style={{ backgroundColor: '#0b0f1a' }}>
       <div className="max-w-4xl mx-auto">
 
         <Link to="/recruiter/dashboard" className="text-blue-400 hover:underline text-sm">
@@ -33,7 +33,7 @@ function ViewApplicants() {
             {applicants.map((a) => (
               <div
                 key={a.id}
-                className="bg-gray-800 rounded-xl p-5 flex items-center justify-between"
+                className="bg-white/5 border border-white/10 rounded-xl p-5 flex items-center justify-between"
               >
                 <div>
                   <h3 className="text-white font-semibold">{a.name}</h3>
