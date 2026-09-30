@@ -70,15 +70,13 @@ function Register() {
       return
     }
 
-    const finalData = { ...formData, role }
-    console.log('Register data:', finalData)
     setAuthRole(role)
     navigate(role === 'recruiter' ? '/recruiter/dashboard' : '/seeker/dashboard')
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
-      <div className="bg-gray-800 p-8 rounded-2xl w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: '#0b0f1a' }}>
+      <div className="bg-white/5 border border-white/10 p-8 rounded-2xl w-full max-w-md">
 
         <h1 className="text-3xl font-bold text-white mb-2 text-center">
           Create Account
@@ -87,13 +85,12 @@ function Register() {
           Join JobPortal as a Job Seeker or Recruiter
         </p>
 
-        {/* Role Toggle */}
-        <div className="flex bg-gray-700 rounded-lg p-1 mb-6">
+        <div className="flex bg-white/5 border border-white/10 rounded-lg p-1 mb-6">
           <button
             type="button"
             onClick={() => setRole('seeker')}
             className={`flex-1 py-2 rounded-lg font-semibold transition ${
-              role === 'seeker' ? 'bg-blue-600 text-white' : 'text-gray-300'
+              role === 'seeker' ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white' : 'text-gray-300'
             }`}
           >
             Job Seeker
@@ -102,7 +99,7 @@ function Register() {
             type="button"
             onClick={() => setRole('recruiter')}
             className={`flex-1 py-2 rounded-lg font-semibold transition ${
-              role === 'recruiter' ? 'bg-blue-600 text-white' : 'text-gray-300'
+              role === 'recruiter' ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white' : 'text-gray-300'
             }`}
           >
             Recruiter
@@ -121,7 +118,7 @@ function Register() {
               value={formData.name}
               onChange={handleChange}
               placeholder="John Doe"
-              className={`w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 ${
+              className={`w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 ${
                 errors.name ? 'ring-2 ring-red-500' : 'focus:ring-blue-500'
               }`}
             />
@@ -137,7 +134,7 @@ function Register() {
                 value={formData.companyName}
                 onChange={handleChange}
                 placeholder="Acme Corp"
-                className={`w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 ${
+                className={`w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 ${
                   errors.companyName ? 'ring-2 ring-red-500' : 'focus:ring-blue-500'
                 }`}
               />
@@ -155,7 +152,7 @@ function Register() {
               value={formData.email}
               onChange={handleChange}
               placeholder="you@example.com"
-              className={`w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 ${
+              className={`w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 ${
                 errors.email ? 'ring-2 ring-red-500' : 'focus:ring-blue-500'
               }`}
             />
@@ -170,7 +167,7 @@ function Register() {
               value={formData.password}
               onChange={handleChange}
               placeholder="••••••••"
-              className={`w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 ${
+              className={`w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 ${
                 errors.password ? 'ring-2 ring-red-500' : 'focus:ring-blue-500'
               }`}
             />
@@ -187,7 +184,7 @@ function Register() {
               value={formData.confirmPassword}
               onChange={handleChange}
               placeholder="••••••••"
-              className={`w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 ${
+              className={`w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 ${
                 errors.confirmPassword ? 'ring-2 ring-red-500' : 'focus:ring-blue-500'
               }`}
             />
@@ -198,7 +195,7 @@ function Register() {
 
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold mt-2"
+            className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white py-2 rounded-lg font-semibold mt-2 transition-all"
           >
             Create Account
           </button>

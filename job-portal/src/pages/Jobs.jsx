@@ -32,11 +32,17 @@ function Jobs() {
   })
 
   return (
-    <div className="min-h-screen bg-gray-900 px-6 py-10">
+    <div className="min-h-screen px-6 py-10" style={{ backgroundColor: '#0b0f1a' }}>
 
-      <h1 className="text-3xl font-bold text-white mb-6 text-center">
-        Explore Jobs & Internships
-      </h1>
+      <div className="text-center mb-10">
+        <h1 className="text-4xl font-extrabold text-white mb-3">
+          Explore{' '}
+          <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+            Opportunities
+          </span>
+        </h1>
+        <p className="text-gray-400">Find the role that fits you best</p>
+      </div>
 
       <div className="max-w-4xl mx-auto mb-8 flex flex-col sm:flex-row gap-3">
         <div className="flex-1 relative">
@@ -46,14 +52,14 @@ function Jobs() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search by job title or company..."
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-gray-800 text-white outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 pr-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <select
           value={typeFilter}
           onChange={(e) => setTypeFilter(e.target.value)}
-          className="px-4 py-2 rounded-lg bg-gray-800 text-white outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
         >
           {types.map((t) => (
             <option key={t} value={t}>

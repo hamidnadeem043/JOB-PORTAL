@@ -18,7 +18,6 @@ function Login() {
       ...formData,
       [e.target.name]: e.target.value,
     })
-    
     setErrors({
       ...errors,
       [e.target.name]: '',
@@ -52,15 +51,14 @@ function Login() {
       return
     }
 
-    console.log('Login data:', formData)
     setRole('seeker')
     navigate('/seeker/dashboard')
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
-      <div className="bg-gray-800 p-8 rounded-2xl w-full max-w-md">
-        
+    <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: '#0b0f1a' }}>
+      <div className="bg-white/5 border border-white/10 p-8 rounded-2xl w-full max-w-md">
+
         <h1 className="text-3xl font-bold text-white mb-2 text-center">
           Welcome Back
         </h1>
@@ -69,7 +67,7 @@ function Login() {
         </p>
 
         <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
-          
+
           <div>
             <label className="text-gray-300 text-sm mb-1 block">Email</label>
             <input
@@ -78,7 +76,7 @@ function Login() {
               value={formData.email}
               onChange={handleChange}
               placeholder="you@example.com"
-              className={`w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 ${
+              className={`w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 ${
                 errors.email ? 'ring-2 ring-red-500' : 'focus:ring-blue-500'
               }`}
             />
@@ -95,7 +93,7 @@ function Login() {
               value={formData.password}
               onChange={handleChange}
               placeholder="••••••••"
-              className={`w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 ${
+              className={`w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 ${
                 errors.password ? 'ring-2 ring-red-500' : 'focus:ring-blue-500'
               }`}
             />
@@ -106,7 +104,7 @@ function Login() {
 
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold mt-2"
+            className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white py-2 rounded-lg font-semibold mt-2 transition-all"
           >
             Login
           </button>
