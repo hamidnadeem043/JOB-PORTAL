@@ -25,7 +25,6 @@ function JobDetail() {
   function handleSubmit(e) {
     e.preventDefault()
     console.log('Application submitted:', { jobId: job.id, ...formData })
-    // Yahan baad me Python backend ko POST request bhejenge
     setSubmitted(true)
   }
 
@@ -37,21 +36,21 @@ function JobDetail() {
 
   if (!job) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0b0f1a' }}>
         <p className="text-white text-xl">Job not found.</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 px-6 py-10">
-      <div className="max-w-3xl mx-auto bg-gray-800 rounded-2xl p-8">
+    <div className="min-h-screen px-6 py-10" style={{ backgroundColor: '#0b0f1a' }}>
+      <div className="max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
 
         <Link to="/jobs" className="text-blue-400 hover:underline text-sm">
           ← Back to Jobs
         </Link>
 
-        <span className="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full mt-4 mb-3">
+        <span className="inline-block bg-blue-500/10 text-blue-400 text-xs font-medium px-3 py-1 rounded-full border border-blue-500/20 mt-4 mb-3">
           {job.type}
         </span>
 
@@ -64,17 +63,16 @@ function JobDetail() {
 
         <button
           onClick={() => setShowModal(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold"
+          className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white px-6 py-3 rounded-lg font-semibold transition-all"
         >
           Apply Now
         </button>
 
       </div>
 
-      {/* Modal Overlay */}
       {showModal && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center px-4 z-50">
-          <div className="bg-gray-800 rounded-2xl p-8 w-full max-w-md relative">
+          <div className="bg-[#111827] border border-white/10 rounded-2xl p-8 w-full max-w-md relative">
 
             <button
               onClick={closeModal}
@@ -94,7 +92,7 @@ function JobDetail() {
                 </p>
                 <button
                   onClick={closeModal}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold"
+                  className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white px-6 py-2 rounded-lg font-semibold transition-all"
                 >
                   Close
                 </button>
@@ -114,7 +112,7 @@ function JobDetail() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
@@ -126,7 +124,7 @@ function JobDetail() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
@@ -139,14 +137,14 @@ function JobDetail() {
                       onChange={handleChange}
                       rows={4}
                       placeholder="Why are you a good fit for this role?"
-                      className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold mt-2"
+                    className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white py-2 rounded-lg font-semibold mt-2 transition-all"
                   >
                     Submit Application
                   </button>
